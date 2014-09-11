@@ -1,0 +1,477 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+
+<style>
+body{
+background-color: rgba(255, 255, 255, 0.1);
+
+}
+.table .table{
+background-color: rgba(255, 255, 255, 0);
+}
+
+.tab-content>.tab-pane{
+	max-height: 300px;
+overflow-y: auto
+}
+
+  .container3d {
+    width: 150px;
+    height: 294px;
+    position: relative;
+    margin: 20px auto;
+    -webkit-perspective: 1000px;
+    -webkit-perspective-origin: 50% 50%;
+  }
+  #box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 25px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: all 1.0s ease-in-out;
+    -moz-transition: all 1.0s ease-in-out;
+    -ms-transition: all 1.0s ease-in-out;
+    transition: all 1.0s ease-in-out;
+  }
+  #box div {
+    display: block;
+    position: absolute;
+  }
+  #box .front,
+  #box .back {
+    width: 150px;
+    height: 294px;
+  }
+  #box .right,
+  #box .left {
+    width: 21px;
+    height: 294px;
+    left: 65px;
+  }
+  .front img,
+  .back img {
+    width: 150px;
+    border-radius: 15px;
+  }
+  .left img,
+  .right img {
+    width: 20px;
+    height: 292;
+    border-radius: 5px;
+  }
+  #box .face {
+    border: 1px solid #070707;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    box-shadow: 10px -10px 20px #FFC0F7;
+  }
+  #box .front {
+    -webkit-transform: rotateY(0deg) translateZ(10px);
+  }
+  #box .back {
+    -webkit-transform: rotateY(180deg) translateZ(10px);
+  }
+  #box .right {
+    -webkit-transform: rotateY(90deg) translateZ(75px);
+  }
+  #box .left {
+    -webkit-transform: rotateY(90deg) translateZ(-75px);
+  }
+  .controlls {
+    width: 100%;
+    position: relative;
+  }
+  .controlls input[type="range"] {
+    width: 100%;
+  }
+  .controlls label {
+    color: black;
+  }
+</style>
+
+
+
+
+
+<table class="table">
+<tr>
+	<td>
+	Canvas Nitro A310
+	</td>
+</tr>
+  <tr>
+    <td>
+      <div class="controlls">
+        <input type="range" min="-180" max="180" value="0" id="rotateY">
+      </div>
+    </td>
+    
+    <td rowspan="2">
+    	
+    		<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#description" role="tab" data-toggle="tab">Product Description</a></li>
+  <li><a href="#specifications" role="tab" data-toggle="tab">Specifications</a></li>
+  <li><a href="#reviews" role="tab" data-toggle="tab">Reviews</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+  <div class="tab-pane active" id="description">
+  	<div>
+  		<ul class="key-features">
+                         <li>1.7 GHz Tru-Octacore processor </li>
+                         <li> 2GB RAM </li>
+                         <li> 12.7cm (5) HD IPS Screen </li>
+                         <li> Quick Access App Suite </li>
+                         <li> 13 MP AF Rear Camera </li>
+                         <li> 5MP FF Front Camera </li>
+                         <li> Android Kitkat 4.4.2 </li>
+                         <li> 32GB Expandable Memory </li>
+                         <li> Colors: Mystic Blue, Pristine White</li>
+                         <li>SUPC: <span class="hightLightSupc">SDL928236919</span> </li>
+                     </ul>
+  	</div>
+  </div>
+  <div class="tab-pane" id="specifications">
+  	<table class="table">
+         <tbody><tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Technical Specifications</th></tr>
+        <tr>
+    <td width="20%">In Sales Package</td>
+    <td>Handset,USB,Warrenty card,User Manual </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">General Features</th></tr>
+        <tr>
+    <td width="20%">Handset Model</td>
+    <td>Micromax Canvas Nitro A310 </td>
+    </tr>
+        <tr>
+    <td width="20%">Form</td>
+    <td>Touch </td>
+    </tr>
+        <tr>
+    <td width="20%">SIM</td>
+    <td>Dual SIM </td>
+    </tr>
+        <tr>
+    <td width="20%">Business Features</td>
+    <td>Email </td>
+    </tr>
+        <tr>
+    <td width="20%">Call Features</td>
+    <td>Call Waiting, Call Forward, Call List </td>
+    </tr>
+        <tr>
+    <td width="20%">2G Network</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">3G Network</td>
+    <td>Yes </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Software</th></tr>
+        <tr>
+    <td width="20%">Operating Frequency</td>
+    <td>WCDMA:900/2100MHz,GSM:900/1800/1900MHz </td>
+    </tr>
+        <tr>
+    <td width="20%">Processor</td>
+    <td>1.7GHz Tru Octa Core Processor </td>
+    </tr>
+        <tr>
+    <td width="20%">OS Version</td>
+    <td>Android 4.4.2 kit kat </td>
+    </tr>
+        <tr>
+    <td width="20%">RAM</td>
+    <td>2 GB </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Display</th></tr>
+        <tr>
+    <td width="20%">Size</td>
+    <td>12.7cm (5) </td>
+    </tr>
+        <tr>
+    <td width="20%">Resolution</td>
+    <td>1280 x 720 HD </td>
+    </tr>
+        <tr>
+    <td width="20%">Other Display Features</td>
+    <td>IPS,16M colours </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Camera</th></tr>
+        <tr>
+    <td width="20%">Primary Camera</td>
+    <td>13 MP </td>
+    </tr>
+        <tr>
+    <td width="20%">Secondary Camera</td>
+    <td>5 MP </td>
+    </tr>
+        <tr>
+    <td width="20%">Video Recording</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">HD Recording</td>
+    <td>Yes, 1080p </td>
+    </tr>
+        <tr>
+    <td width="20%">Zoom</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">Other Camera Features</td>
+    <td>Rear camera AF, Front camera FF </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Connectivity</th></tr>
+        <tr>
+    <td width="20%">GPRS</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">EDGE</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">3G</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">Wifi</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">USB Connectivity</td>
+    <td>Yes,Micro USB (5 pin) , USB 2.0 </td>
+    </tr>
+        <tr>
+    <td width="20%">GPS</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">Bluetooth</td>
+    <td>Yes,v4.0 </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Memory &amp; Storage</th></tr>
+        <tr>
+    <td width="20%">Internal memory</td>
+    <td>8 GB </td>
+    </tr>
+        <tr>
+    <td width="20%">User Memory</td>
+    <td>5.68GB (apps &amp; mass storage) </td>
+    </tr>
+        <tr>
+    <td width="20%">External memory</td>
+    <td>Upto 32GB </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Multimedia</th></tr>
+        <tr>
+    <td width="20%">Video  </td>
+    <td>3GP, MP4, AVI(MJPEG) </td>
+    </tr>
+        <tr>
+    <td width="20%">Audio</td>
+    <td>MP3, Midi, AAC, Amr, Wav </td>
+    </tr>
+        <tr>
+    <td width="20%">FM</td>
+    <td>Yes </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Dimensions</th></tr>
+        <tr>
+    <td width="20%">Size</td>
+    <td>N/A </td>
+    </tr>
+        <tr>
+    <td width="20%">Weight</td>
+    <td>N/A </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Battery</th></tr>
+        <tr>
+    <td width="20%">Type</td>
+    <td>2500 mAh </td>
+    </tr>
+        <tr>
+    <td width="20%">Talk Time</td>
+    <td>10 h </td>
+    </tr>
+        <tr>
+    <td width="20%">Standby Time</td>
+    <td>320 h </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Sound</th></tr>
+        <tr>
+    <td width="20%">Loudspeaker</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">3.5mm jack</td>
+    <td>Yes </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+            <tr><td>
+    <table class="table">
+      <tbody><tr><th colspan="2">Other Features</th></tr>
+        <tr>
+    <td width="20%">Call Memory</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">SMS Memory</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">Phone Book Memory</td>
+    <td>Yes </td>
+    </tr>
+        <tr>
+    <td width="20%">Sensors</td>
+    <td>Gravity , Light, Proximity Sensor </td>
+    </tr>
+        </tbody></table>
+    </td></tr>
+        </tbody></table>
+  
+  </div>
+  <div class="tab-pane" id="reviews">
+  		<div class="pr-review-faceoff-container"><p class="pr-review-faceoff-label">Most Liked Positive Review</p><div class="pr-review-faceoff-review-content"><div class="pr-stars pr-stars-5" style="background-position: 0px -230px;">&nbsp;</div><p class="pr-review-faceoff-title">Awesome Specs for an Awesome Price.VFM.</p><p class="pr-review-faceoff-review">First of all, i wanna thank Xiaomi, only because of their agressive pricing, we in India now can have great spec'ed devices from Micromax,Xolo etc for an affordable price. Nitro A310 is...<a data-pr-event="faceoff-positive-link" class="pr-review-faceoff-readcomplete" href="#" onclick="POWERREVIEWS.display.displayFaceoffModal('2095139198','pr-review-faceoff-positive-2095139198'); return false">Read complete review</a></p><p class="pr-review-faceoff-review-full">First of all, i wanna thank Xiaomi, only because of their agressive pricing, we in India now can have great spec'ed devices from Micromax,Xolo etc for an affordable price. Nitro A310 is without any doubt,best you can get for the price as of this writing.<br><br>Lets talk about the device now. Is it worth it?<br><br>Display and Build quality<br>5 inch HD (720P) display. I am actually not disappointed for this not having a 1080P screen.Human eye can't see anything higher than 300PPI and more pixels means more Battery the display consumes. 5 inch 720P is the ideal combination in my opinion. Oleophobic Coating/ Anti-finger Print coating is really a nice thing to have.It has a leather back panel offering better grip.<br><br>Processor and Ram<br>This is powered by a Mediatek Octacore chipset (MT6592w clocked at 1.7Ghz) and has a quadcore Mali 450 MP4 GPU clocked at 700 Mhz. The performance of this combination is really great and you would hardly find any issues during playing HD games and all. 2GB ram ensures good multitasking.<br><br>Battery<br>One of the mistakes many Indian OEMs did with their octacore phones is packing them with a small battery. Micromax on the other hand decided to pack this with a larger 2500mAh battery to ensure you wont run out of battery before the day ends.<br><br>Camera : 13MP 2.2 Aperture Sony Sensor, Rear Camera and a 5MP 2.4 Aperture BSI Front Camera. This is the same combination you can see in Xolo 8x-1100 and looking at the specs,they both have the same front and back camera sensors. Overall performance of the camera is sure gonna be good.Expect noise to creep in when the light drops. A 2.4 aperture front camera,gets in more light to get better selfies.<br><br>Software <br>This is running Android 4.4 Kitkat and i hope Micromax will care to update this with Android L when it gets official. Since there is no official announcement on this, i suspect this to take time,maybe 3-4 months after Android L source code is fully out.<br>Micromax is boasting a lot of custom added software features to the stock Android Kitkat,you can see the details on that on their official website.<br><br>Verdict<br>Overall Canvas Nitro is really a great device for the price.Value for money.There are some other octacore devices at this price range,but they are powered by a MT6592m processor clocked at 1.4Ghz and most have a 2000mAh battery. The obvious direct contenders are the New Moto G second gen and Xiaomi Mi3.Moto G has some cool software features and im pretty sure it will get software updates very fast compared to Micromax or any other OEMs in India. Android L update is guaranteed too,but whether canvas nitro will get L update remains to be seen.Overall Canvas Nitro,spec-wise, is a real value for money device.</p></div></div>
+  
+  </div>
+</div>
+
+
+    		
+    		
+    	
+    </td>
+  </tr>
+  <tr>
+    <td>
+
+      <section class="container3d">
+        <div id="box">
+          <div class="front face">
+            <div>
+              <img src="../images/mobile001_front.jpg">
+            </div>
+
+          </div>
+          <div class="back face">
+            <div>
+              <img src="../images/mobile001_back.jpg">
+            </div>
+          </div>
+          <div class="right face">
+
+            <div>
+              <img src="../images/mobile001_side.jpg">
+            </div>
+          </div>
+          <div class="left face">
+
+            <div>
+              <img src="../images/mobile001_side.jpg">
+            </div>
+          </div>
+          <!--
+    <div class="top">
+    	Top
+    </div>
+    <div class="bottom">
+    	Bottom
+    </div>-->
+        </div>
+
+      </section>
+
+
+    </td>
+  </tr>
+
+
+</table>
+
+
+
+
+
+
+
+
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+
+<script>
+  $('#rotateY').change(function() {
+    rotateY($(this).val());
+  });
+
+
+
+  var currentAngle = 0;
+
+  function next() {
+    currentAngle -= 90;
+    rotateY(currentAngle);
+  }
+
+  function prev() {
+    currentAngle += 90;
+    rotateY(currentAngle);
+  }
+
+  function rotateY(angle) {
+    $("#box").css("transform", "rotateY(" + angle + "deg)");
+  }
+</script>
+
+
