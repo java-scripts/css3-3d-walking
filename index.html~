@@ -42,7 +42,7 @@
 							<table>	
 								<tr>
 									<td><input type="button" value="Push" onclick="rotateCubeLeft(); " style="height:100%;"></td>
-									<td style="height: 100%;padding-top: 25px;font-size:50px"><h1>Back face content...</h1></td>
+									<td style="height: 100%;padding-top: 25px;font-size:50px">Back face content...</td>
 									<td><input type="button" value="Push" onclick="rotateCubeRight(); " style="height:100%;"></td>
 									
 								</tr>
@@ -66,7 +66,7 @@
 							<table>	
 								<tr>
 									<td><input type="button" value="Push" onclick="rotateCubeLeft(); " style="height:100%;"></td>
-									<td style="height: 100%;padding-top: 25px;font-size:50px"><h1>Right face content...</h1></td>
+									<td style="height: 100%;padding-top: 25px;font-size:50px">Right face content...</td>
 									<td><input type="button" value="Push" onclick="rotateCubeRight(); " style="height:100%;"></td>
 									
 								</tr>

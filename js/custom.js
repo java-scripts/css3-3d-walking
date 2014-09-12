@@ -75,7 +75,7 @@ function up(){
 	}
 }
 function down(){
-	if(r<8000 && beta==0){
+	if(r<6500 && beta==0){
 	walk2d(-500,0)
 	}
 }
@@ -162,11 +162,18 @@ $(document).ready(function(){
 	
 	
 	$('.left-wall').children().each(function(i){
-		$(this).css('-webkit-transform','translateZ('+(i+1)*800+'px) translateX(-650px) rotateY(90deg)');
+		var tz = (6-i)*800;
+		$(this).css('-webkit-transform','translateZ('+tz+'px) translateX(-650px) rotateY(90deg)');
+		var $that = $(this);
+		window.setTimeout(function(){
+			$that.html('<div class="content"><iframe src="faces/left/face5.html"></iframe></div>');
+		},(i+1)*1000);
 	});
 	
 	$('.right-wall').children().each(function(i){
-		$(this).css('-webkit-transform','translateZ('+(i+1)*800+'px) translateX(650px) rotateY(270deg)');
+		var tz = (6-i)*800;
+		$(this).css('-webkit-transform','translateZ('+tz+'px) translateX(650px) rotateY(270deg)');
+		
 	});
 });
 
