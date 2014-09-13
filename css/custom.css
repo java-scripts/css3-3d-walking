@@ -175,9 +175,12 @@ background:#333;
           
 }
 .site-wrapper table{
-	margin:150px auto;
+	margin:100px auto;
 }
 
+.site-wrapper table td {
+padding-left: 20px;
+}
 
 .login #left{	  -webkit-transform: translateX(-400px);	}
 .login #right{ -webkit-transform: translateX(400px);}
