@@ -222,7 +222,10 @@ function rotateCubeLeft(){
 
 
 
-
+function login(){
+	$('.login #left').css('transform','translateX(-1200px)')
+		$('.login #right').css('transform','translateX(1200px)')
+}
 
 
 walk2d(-5000,0);
