@@ -112,70 +112,56 @@ function right(){
   };
 
 var shiftdown=false;
-
+var ctrldown = false
 keyUtil.onKeyEvent('keydown',{	
-	right:function(){
-		
+	right:function(){		
 		if(shiftdown){
 			shiftRight();
-		}else{
+		}else if(ctrldown){
 			right();
 		}
 	},
 	left:function(){
 		if(shiftdown){
 			shiftLeft();
-		}else{
+		}else if(ctrldown){
 			left();
 		}
 		
 	},
 	up:function(){
-		up();
+		if(shiftdown){
+			up();
+		}
+		
 	},
 	down:function(){
-		down();
+		if(shiftdown){
+			down();
+		}
 	},
 	shift:function(){
 		shiftdown=true;		
+	},
+	ctrl:function(){
+		ctrldown=true;
 	}
+	
 
 });
 keyUtil.onKeyEvent('keyup',{		
 	shift:function(){
 		shiftdown=false;		
+	},
+	ctrl:function(){
+		ctrldown=false;
 	}
 
 });
 
 
 
-$(document).ready(function(){
-	
-	
-	
-	
-	
-	loop(function(loopId){
-		animateBases(loopId);
-	},10000);
-	
-	
-	$('.left-wall').children().each(function(i){
-		var tz = (6-i)*800;
-		$(this).css('-webkit-transform','translateZ('+tz+'px) translateX(-650px) rotateY(90deg)');
-		var $that = $(this);
-		window.setTimeout(function(){
-			$that.html('<div class="content"><iframe src="faces/left/face5.html"></iframe></div>');
-		},(i+1)*1000);
-	});
-	
-	$('.right-wall').children().each(function(i){
-		var tz = (6-i)*800;
-		$(this).css('-webkit-transform','translateZ('+tz+'px) translateX(650px) rotateY(270deg)');
-		
-	});
-});
+
 
 function loop(fn,time){
 	var loopId = window.setTimeout(function(){
@@ -185,17 +171,7 @@ function loop(fn,time){
 }
 
 
-function animateBases(loopId){
-	$('.base').children().each(function(i){	
-		var $that = $(this);
-		var tx = (loopId+i)%2==0?250:-250;
-		window.setTimeout(function(){
-			$that.css( '-webkit-transform','translateZ('+(i+1)*500+'px)translateY(250px) translateX('+tx+'px)rotateX(90deg)');
-		},i*500)
-		
-		
-	});
-}
+
 
 
 document.onmousewheel = function(e){
@@ -222,14 +198,115 @@ function rotateCubeLeft(){
 
 
 
-function login(){
+
+function setLeftWallPositions(){
+	$('.left-wall').children().each(function(i){
+		var tz = (6-i)*800;
+		$(this).css('-webkit-transform','translateZ('+tz+'px) translateX(-650px) rotateY(90deg)');		
+	});
+}
+function setRightWallPositions(){
+$('.right-wall').children().each(function(i){
+		var tz = (6-i)*800;
+		$(this).css('-webkit-transform','translateZ('+tz+'px) translateX(650px) rotateY(270deg)');
+		
+	});
+
+}
+
+function setBasePositions(){
+	$('.base').children().each(function(i){	
+		var $that = $(this);
+		var tx = i%2==0?250:-250;
+		window.setTimeout(function(){
+			$that.css( '-webkit-transform','translateZ('+(i+1)*500+'px)translateY(250px) translateX('+tx+'px)rotateX(90deg)');			
+		},i*500)	
+	});
+}
+
+function animateBases(loopId){
+	$('.base').children().each(function(i){			
+		var tx = (loopId+i)%2==0?250:-250;		
+		$(this).css( '-webkit-transform','translateZ('+(i+1)*500+'px)translateY(250px) translateX('+tx+'px)rotateX(90deg)');			
+	});
+}
+
+function openGates(){
 	$('.login #left').css('transform','translateX(-1200px)')
 		$('.login #right').css('transform','translateX(1200px)')
 }
 
 
+
+function closeGates(){
+	$('.login #left').css('transform','translateX(-400px)');		
+		$('.login #right').css('transform','translateX(400px)');
+}
+
+function loadNextImge(i, imageReg){
+		var reg = imageReg[i];		
+		if(reg){
+			var img = reg.img;
+			img.src = reg.src;
+			img.onload= function(){				
+				loadNextImge(i+1, imageReg);
+			}			
+		}
+	}
+	
+function loadLeftWallImages(){
+	var imageReg={}
+	$('.left-wall .content img').each(function(i){
+		imageReg[i]= {img:$(this)[0],src:$(this).attr('img-src')};
+	});	
+	loadNextImge(0, imageReg);	
+}
+
+function loadRightWallImages(){
+	var imageReg={}
+	$('.right-wall .content img').each(function(i){
+		imageReg[i]= {img:$(this)[0],src:$(this).attr('img-src')};
+	});	
+	loadNextImge(0, imageReg);	
+}
+
+
+function loadBaseImages(){
+	var imageReg={}
+	$('.base .content img').each(function(i){
+		imageReg[i]= {img:$(this)[0],src:$(this).attr('img-src')};
+	});	
+	loadNextImge(0, imageReg);	
+}
+function loadCubeImages(){
+	var imageReg={}
+	$('.cube .content img').each(function(i){
+		imageReg[i]= {img:$(this)[0],src:$(this).attr('img-src')};
+	});	
+	loadNextImge(0, imageReg);	
+}
+
+setLeftWallPositions();
+setRightWallPositions();
+setBasePositions();
 walk2d(-5000,0);
 
 
 
 
+
+$(document).ready(function(){		
+
+	window.setTimeout(function(){closeGates()},3000);	
+	loadLeftWallImages();
+	loadRightWallImages();
+	loadBaseImages();
+	loadCubeImages();
+	window.setTimeout(function(){
+		loop(function(loopId){
+		animateBases(loopId);
+		//rotateCubeLeft();
+		},10000);
+	},10000);
+		
+});
