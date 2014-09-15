@@ -17,6 +17,15 @@
     <link rel="stylesheet" href="stylesheets/ie.css">
     <![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  
+  <script>
+  if(!(/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor))){
+		alert('This is a chrome experiment. Please use chromium browser.  Closing the window....');
+		window.close();
+		//fire fox can not be closed. so 
+		location.href="sorry"
+	}
+  </script>
 
 </head>
 
