@@ -1,0 +1,240 @@
+
+
+body {
+background-image: url('../img/waterwave1.jpg');
+background-size: 100% 300%;
+
+
+}
+.container {
+  width: 900px;
+  height: 500px;
+  position: relative;
+  margin:50px auto;
+
+  -webkit-perspective: 1500px;
+  -webkit-perspective-origin: 50% 0px	;
+}
+
+#box {
+  width: 100%;
+  height: 100%;
+  position: absolute; 
+    margin: 0 auto;
+  -webkit-transform-style: preserve-3d;
+ 
+
+  -webkit-transition:all 2.0s ease;
+    -moz-transition:all 2.0s ease;
+    -ms-transition:all 2.0s ease;
+    transition:all 2.0s ease;
+ 
+
+}
+
+
+#box div {
+  display: block;
+  position: absolute;
+ 
+}
+
+
+
+
+
+
+ .front-wall{
+-webkit-transform-style: preserve-3d;
+-webkit-transform: translateZ(-600px)translateY(-100px)translateX(-250px);
+
+}
+
+.cube{
+
+ width: 800px;
+  height: 500px;
+  
+ border:1px solid rgba(255,255,255,0.5);
+ background:rgba(0,0,0,0.1);
+box-shadow:-5px -1px 5px #FFFFFF;
+
+-webkit-transform-style: preserve-3d;
+
+
+-webkit-transform-style: preserve-3d;
+  -webkit-transition:all 2.0s ease;
+    -moz-transition:all 2.0s ease;
+    -ms-transition:all 2.0s ease;
+    transition:all 2.0s ease;
+
+}
+.cube div{
+	margin-top:-30px
+}
+
+.cube #front{background:rgba(255,0,0,0.2);-webkit-transform:rotateY(0deg) translateZ(600px);}
+.cube #back{	background:rgba(0,0,255,0.2);-webkit-transform:rotateY(180deg) translateZ(600px);}
+.cube #left{	background:rgba(0,255,255,0.2);	-webkit-transform:rotateY(-90deg) translateZ(600px);}
+.cube #right{	background:rgba(255,0,255,0.2);	-webkit-transform:rotateY(90deg) translateZ(600px);}
+
+
+
+#box .base .face{
+ width: 800px;
+  height: 500px;
+ border:1px solid rgba(255,255,255,0.5);
+ background:rgba(0,0,0,0.1);
+border-radius: 95px;
+box-shadow: 0px 10px 5px #FFFFFF;
+
+
+  -webkit-transition:all 2.0s ease;
+    -moz-transition:all 2.0s ease;
+    -ms-transition:all 2.0s ease;
+    transition:all 2.0s ease;
+	
+}
+
+
+#box .left-wall .face{
+ width: 800px;
+  height: 500px;
+ border:1px solid rgba(255,255,255,0.5);
+ background:rgba(0,0,0,0.1);
+border-radius: 95px;
+box-shadow:-5px -1px 5px #FFFFFF;
+}
+
+#box .right-wall .face{
+ width: 800px;
+  height: 500px;
+ border:1px solid rgba(255,255,255,0.5);
+ background:rgba(0,0,0,0.1);
+border-radius: 95px;
+box-shadow:5px -1px 5px #FFFFFF; 
+}
+
+
+#box .front-wall .face{
+width: 1200px;
+height: 600px;
+border: 5px solid rgba(255,255,255,0.5);
+background: rgba(206, 208, 221, 1);
+-webkit-transform-style: preserve-3d;
+border-radius: 50px;
+}
+
+
+.base .face{ -webkit-transform: translateZ(0px)translateY(2000px) translateX(-250px)rotateX(90deg)}
+
+#box .face div{
+font-size: 300px;
+width: 95%;
+padding:25px;
+}
+
+
+.login {
+width: 800px;
+  height: 600px;
+  
+-webkit-transform-style: preserve-3d;
+  -webkit-transform: translateZ(5100px)translateY(-50px)translateX(30px);
+  
+
+
+}
+
+.login #left, .login #right{
+border: 1px solid #FFF;
+box-shadow: 0px -5px 5px #FFF;
+width: 100%;
+  height: 100%;
+border-radius: 20px;
+background:#333;
+
+-webkit-transform-style: preserve-3d;
+  -webkit-transition:all 4.0s ease;
+    -moz-transition:all 4.0s ease;
+    -ms-transition:all 4.0s ease;
+    transition:all 4.0s ease;
+
+}
+.site-wrapper{
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  
+   display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);  
+          
+}
+.site-wrapper table{
+	margin:100px auto;
+}
+
+.site-wrapper table td {
+padding-left: 20px;
+}
+
+.login #left{	  -webkit-transform: translateX(-400px);	}
+.login #right{ -webkit-transform: translateX(400px);}
+
+.content{
+	height:100%;
+	width:80%;	
+}
+.content iframe, .content div, .content table{
+	height: 90%;
+width: 95%;
+padding: 10px;	
+}
+.content img{
+width: 100%;
+border-radius: 50px;
+height:450px;
+}
+
+.cube .content img{
+	height: 600px;
+	border-radius: 50px;
+	width: 100%;
+}
+
+
+
+a.arrow_next{
+position: absolute;
+
+top: 40%;
+z-index: 60;
+height: 50px;
+width: 50px;
+left: 95%;
+background-position: 50px 0px;
+background-image: url(../img/arrows.png);
+}
+
+.arrow_next:hover {
+background-position: 50px 50px;
+background-image: url(../img/arrows.png);
+}
+
+a.arrow_prev{
+position: absolute;
+top: 40%;
+z-index: 60;
+height: 50px;
+width: 50px;
+left: 0%;
+background-image: url(../img/arrows.png);
+}
+.arrow_prev:hover {
+background-position: 0px 50px;
+background-image: url(../img/arrows.png);
+}
