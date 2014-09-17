@@ -245,3 +245,54 @@ background-position: 0px 50px;
 background-image: url(../img/arrows.png);
 }
 
+
+
+
+.controls{
+	position:relative;
+	top:-100px;
+	left: -20px;
+}
+
+.controls table{	
+	margin:0px auto;
+}
+
+.controls table input[type="button"] {
+width: 50px;
+height: 50px;
+font-size: 30px;
+color: #FFF;
+border-radius: 30px;
+text-shadow: 2px 2px 2px #0A0A0A;
+background: rgba(75, 75, 223, 0.45);
+border: 2px solid rgba(126, 126, 126, 0.47);
+}
+
+.controls table input[type="button"]:hover{
+width: 50px;
+height: 50px;
+font-size: 30px;
+color: #FFF;
+border-radius: 30px;
+text-shadow: 2px 2px 2px #0A0A0A;
+background: rgba(181, 167, 240, 0.45);
+border: 2px solid rgba(126, 126, 126, 0.47);
+}
+.controls table input[type="button"]:disabled{
+background: rgba(75, 75, 223, 0);
+color: rgba(255, 255, 255, 0.1);
+text-shadow: 0px 0px;
+}
+
+#header{
+	background:#BCBCCF;
+}
+#header table{
+width: 100%;
+color:white;
+}
+#header table td{
+padding-left: 20px
+}
+
