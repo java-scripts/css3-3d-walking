@@ -1,100 +1,115 @@
-function transform(x,y,z,angle){
-	$('#box').css('-webkit-transform','translate3d('+x+'px,'+y+'px,'+z+'px) rotateY('+angle+'deg)');
+function transform(x, y, z, angle) {
+  $('#box').css('-webkit-transform', 'translate3d(' + x + 'px,' + y + 'px,' + z + 'px) rotateY(' + angle + 'deg)');
 }
 
 
-function rad(angle){
-	return angle*Math.PI/180;
+function rad(angle) {
+  return angle * Math.PI / 180;
 }
-function  deg(angle){
-	return angle*180/Math.PI;
+
+function deg(angle) {
+  return angle * 180 / Math.PI;
 }
-function sin(angle){
-	return Math.sin(rad(angle));
+
+function sin(angle) {
+  return Math.sin(rad(angle));
 }
-function asin(val){
-	return deg(Math.asin(val));
+
+function asin(val) {
+  return deg(Math.asin(val));
 }
-function cos(angle){
-	return Math.cos(rad(angle));
+
+function cos(angle) {
+  return Math.cos(rad(angle));
 }
 
 
-function getDist(x1,y1,x2,y2){
-	return Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+function getDist(x1, y1, x2, y2) {
+  return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
 }
 
-var perspective=1000;
+var perspective = 1000;
 var r = perspective;
 var beta = 0;
-var x=0;var z=0;
+var x = 0;
+var z = 0;
 var theta = 0;
-function walk2d(dist, angle){
-	theta = angle+beta;
-	x = 0+r*sin(theta);
-	z=0+perspective-r*cos(theta)+dist;	
-	transform(x,0,z,-theta);
-	r = getDist(x,z,0,perspective);
-	beta = asin(x/r);
-	console.log(" r:"+r+" beta:"+beta);
-	
+
+function walk2d(dist, angle) {
+  theta = angle + beta;
+  x = 0 + r * sin(theta);
+  z = 0 + perspective - r * cos(theta) + dist;
+  transform(x, 0, z, -theta);
+  r = getDist(x, z, 0, perspective);
+  beta = asin(x / r);
+  console.log(" r:" + r + " beta:" + beta);
+
 }
-function sideWalk(step){
-	if(beta==90  ){			
-		if(step<0 && r<5000 ){
-			//walking away			
-			x=x-step;r=r-step;
-			transform(x,0,z,-theta);
-			console.log(" r:"+r+" beta:"+beta);	
-		}else if(step>0 && r>1000){
-			//walking towards center
-			x=x-step;r=r-step;
-			transform(x,0,z,-theta);
-			console.log(" r:"+r+" beta:"+beta);		
-		}		
-	}else if(beta==-90)	{		
-		if(step<0 && r>1000){
-			//walking towards center			
-			x=x-step;r=r+step;
-			transform(x,0,z,-theta);
-			console.log(" r:"+r+" beta:"+beta);	
-		}else if(step>0 && r<5000){
-			//walking away 
-			x=x-step;r=r+step;
-			transform(x,0,z,-theta);
-			console.log(" r:"+r+" beta:"+beta);	
-		}	
-	}	
+
+function sideWalk(step) {
+  if (beta == 90) {
+    if (step < 0 && r < 5000) {
+      //walking away			
+      x = x - step;
+      r = r - step;
+      transform(x, 0, z, -theta);
+      console.log(" r:" + r + " beta:" + beta);
+    } else if (step > 0 && r > 1000) {
+      //walking towards center
+      x = x - step;
+      r = r - step;
+      transform(x, 0, z, -theta);
+      console.log(" r:" + r + " beta:" + beta);
+    }
+  } else if (beta == -90) {
+    if (step < 0 && r > 1000) {
+      //walking towards center			
+      x = x - step;
+      r = r + step;
+      transform(x, 0, z, -theta);
+      console.log(" r:" + r + " beta:" + beta);
+    } else if (step > 0 && r < 5000) {
+      //walking away 
+      x = x - step;
+      r = r + step;
+      transform(x, 0, z, -theta);
+      console.log(" r:" + r + " beta:" + beta);
+    }
+  }
 }
 /*
 walking is restricted between 1000<r<8000 and walking direction beta = 0
 */
-function up(){	
-	if(r>1000 && beta==0){
-	walk2d(500,0)
-	}
-}
-function down(){
-	if(r<6500 && beta==0){
-	walk2d(-500,0)
-	}
-}
-function left(){
-	if(beta<90){
-	walk2d(0,90);
-	}
-}
-function shiftLeft(){	
-	sideWalk(-400);
-}
-function shiftRight(){	
-	sideWalk(400);
+function up() {
+  if (r > 1000 && beta === 0) {
+    walk2d(500, 0);
+  }
 }
 
-function right(){
-	if(beta>-90){
-	walk2d(0,-90)
-	}
+function down() {
+  if (r < 6500 && beta === 0) {
+    walk2d(-500, 0);
+  }
+}
+
+function left() {
+  if (beta < 90) {
+    walk2d(0, 90);
+  }
+}
+
+function shiftLeft() {
+  sideWalk(-400);
+}
+
+function shiftRight() {
+  sideWalk(400);
+}
+
+function right() {
+  if (beta > -90) {
+    walk2d(0, -90);
+  }
 }
 
  var keyUtil = {
@@ -111,51 +126,52 @@ function right(){
     }
   };
 
-var shiftdown=false;
-var ctrldown = false
-keyUtil.onKeyEvent('keydown',{	
-	right:function(){		
-		if(shiftdown){
-			shiftRight();
-		}else if(ctrldown){
-			right();
-		}
-	},
-	left:function(){
-		if(shiftdown){
-			shiftLeft();
-		}else if(ctrldown){
-			left();
-		}
-		
-	},
-	up:function(){
-		if(shiftdown){
-			up();
-		}
-		
-	},
-	down:function(){
-		if(shiftdown){
-			down();
-		}
-	},
-	shift:function(){
-		shiftdown=true;		
-	},
-	ctrl:function(){
-		ctrldown=true;
-	}
-	
+var shiftdown = false;
+var ctrldown = false;
+
+keyUtil.onKeyEvent('keydown', {
+  right: function() {
+    if (shiftdown) {
+      shiftRight();
+    } else if (ctrldown) {
+      right();
+    }
+  },
+  left: function() {
+    if (shiftdown) {
+      shiftLeft();
+    } else if (ctrldown) {
+      left();
+    }
+
+  },
+  up: function() {
+    if (shiftdown) {
+      up();
+    }
+
+  },
+  down: function() {
+    if (shiftdown) {
+      down();
+    }
+  },
+  shift: function() {
+    shiftdown = true;
+  },
+  ctrl: function() {
+    ctrldown = true;
+  }
+
 
 });
-keyUtil.onKeyEvent('keyup',{		
-	shift:function(){
-		shiftdown=false;		
-	},
-	ctrl:function(){
-		ctrldown=false;
-	}
+keyUtil.onKeyEvent('keyup', {
+  shift: function() {
+    shiftdown = false;
+  },
+  ctrl: function() {
+    ctrldown = false;
+  }
 
 });
 
@@ -163,150 +179,191 @@ keyUtil.onKeyEvent('keyup',{
 
 
 
-function loop(fn,time){
-	var loopId = window.setTimeout(function(){
-		loop(fn,time);
-	},time);
-	fn(loopId);
+function loop(fn, time) {
+  var loopId = window.setTimeout(function() {
+    loop(fn, time);
+  }, time);
+  fn(loopId);
 }
 
 
 
 
 
-document.onmousewheel = function(e){
-	if(e.deltaY<0){
-		up();
-	}else{
-		down();
-	}
-}
+document.onmousewheel = function(e) {
+  if (e.deltaY < 0) {
+    up();
+  } else {
+    down();
+  }
+};
 
 
 
 var cubeangle = 0;
-function rotateCubeRight(){
-	cubeangle+=90;
-	$('.cube').css('transform','rotateY('+cubeangle+'deg)')
-}
-function rotateCubeLeft(){
-	cubeangle-=90;
-	$('.cube').css('transform','rotateY('+cubeangle+'deg)')
+
+function rotateCubeRight() {
+  cubeangle += 90;
+  $('.cube').css('transform', 'rotateY(' + cubeangle + 'deg)');
 }
 
-
-
-
-
-
-function setLeftWallPositions(){
-	$('.left-wall').children().each(function(i){
-		var tz = (6-i)*800;
-		$(this).css('-webkit-transform','translateZ('+tz+'px) translateX(-650px) rotateY(90deg)');		
-	});
-}
-function setRightWallPositions(){
-$('.right-wall').children().each(function(i){
-		var tz = (6-i)*800;
-		$(this).css('-webkit-transform','translateZ('+tz+'px) translateX(650px) rotateY(270deg)');
-		
-	});
-
-}
-
-function setBasePositions(){
-	$('.base').children().each(function(i){	
-		var $that = $(this);
-		var tx = i%2==0?250:-250;
-		window.setTimeout(function(){
-			$that.css( '-webkit-transform','translateZ('+(i+1)*500+'px)translateY(250px) translateX('+tx+'px)rotateX(90deg)');			
-		},i*500)	
-	});
-}
-
-function animateBases(loopId){
-	$('.base').children().each(function(i){			
-		var tx = (loopId+i)%2==0?250:-250;		
-		$(this).css( '-webkit-transform','translateZ('+(i+1)*500+'px)translateY(250px) translateX('+tx+'px)rotateX(90deg)');			
-	});
-}
-
-function openGates(){
-	$('.login #left').css('transform','translateX(-1200px)')
-		$('.login #right').css('transform','translateX(1200px)')
+function rotateCubeLeft() {
+  cubeangle -= 90;
+  $('.cube').css('transform', 'rotateY(' + cubeangle + 'deg)');
 }
 
 
 
-function closeGates(){
-	$('.login #left').css('transform','translateX(-400px)');		
-		$('.login #right').css('transform','translateX(400px)');
-}
-
-function loadNextImge(i, imageReg){
-		var reg = imageReg[i];		
-		if(reg){
-			var img = reg.img;
-			img.src = reg.src;
-			img.onload= function(){				
-				loadNextImge(i+1, imageReg);
-			}			
-		}
-	}
-	
-function loadLeftWallImages(){
-	var imageReg={}
-	$('.left-wall .content img').each(function(i){
-		imageReg[i]= {img:$(this)[0],src:$(this).attr('img-src')};
-	});	
-	loadNextImge(0, imageReg);	
-}
-
-function loadRightWallImages(){
-	var imageReg={}
-	$('.right-wall .content img').each(function(i){
-		imageReg[i]= {img:$(this)[0],src:$(this).attr('img-src')};
-	});	
-	loadNextImge(0, imageReg);	
-}
 
 
-function loadBaseImages(){
-	var imageReg={}
-	$('.base .content img').each(function(i){
-		imageReg[i]= {img:$(this)[0],src:$(this).attr('img-src')};
-	});	
-	loadNextImge(0, imageReg);	
+
+function setLeftWallPositions() {
+  $('.left-wall').children().each(function(i) {
+    var tz = (6 - i) * 800;
+    $(this).css('-webkit-transform', 'translateZ(' + tz + 'px) translateX(-650px) rotateY(90deg)');
+  });
 }
-function loadCubeImages(){
-	var imageReg={}
-	$('.cube .content img').each(function(i){
-		imageReg[i]= {img:$(this)[0],src:$(this).attr('img-src')};
-	});	
-	loadNextImge(0, imageReg);	
+
+function setRightWallPositions() {
+  $('.right-wall').children().each(function(i) {
+    var tz = (6 - i) * 800;
+    $(this).css('-webkit-transform', 'translateZ(' + tz + 'px) translateX(650px) rotateY(270deg)');
+
+  });
+
+}
+
+function setBasePositions() {
+  $('.base').children().each(function(i) {
+    var $that = $(this);
+    var tx = i % 2 === 0 ? 250 : -250;
+    window.setTimeout(function() {
+      $that.css('-webkit-transform', 'translateZ(' + (i + 1) * 500 + 'px)translateY(250px) translateX(' + tx + 'px)rotateX(90deg)');
+    }, i * 500);
+  });
+}
+
+function animateBases(loopId) {
+  $('.base').children().each(function(i) {
+    var tx = (loopId + i) % 2 === 0 ? 250 : -250;
+    $(this).css('-webkit-transform', 'translateZ(' + (i + 1) * 500 + 'px)translateY(250px) translateX(' + tx + 'px)rotateX(90deg)');
+  });
+}
+
+function openGates() {
+  $('.login #left').css('transform', 'translateX(-1200px)');
+  $('.login #right').css('transform', 'translateX(1200px)');
+}
+
+
+
+function closeGates() {
+  $('.login #left').css('transform', 'translateX(-400px)');
+  $('.login #right').css('transform', 'translateX(400px)');
+}
+
+function loadNextImge(i, imageReg) {
+  var reg = imageReg[i];
+  if (reg) {
+    var img = reg.img;
+    img.src = reg.src;
+    img.onload = function() {
+      loadNextImge(i + 1, imageReg);
+    };
+  }
+}
+
+function loadLeftWallImages() {
+  var imageReg = {};
+  $('.left-wall .content img').each(function(i) {
+    imageReg[i] = {
+      img: $(this)[0],
+      src: $(this).attr('img-src')
+    };
+  });
+  loadNextImge(0, imageReg);
+}
+
+function loadRightWallImages() {
+  var imageReg = {};
+  $('.right-wall .content img').each(function(i) {
+    imageReg[i] = {
+      img: $(this)[0],
+      src: $(this).attr('img-src')
+    };
+  });
+  loadNextImge(0, imageReg);
+}
+
+
+function loadBaseImages() {
+  var imageReg = {};
+  $('.base .content img').each(function(i) {
+    imageReg[i] = {
+      img: $(this)[0],
+      src: $(this).attr('img-src')
+    };
+  });
+  loadNextImge(0, imageReg);
+}
+
+function loadCubeImages() {
+  var imageReg = {};
+  $('.cube .content img').each(function(i) {
+    imageReg[i] = {
+      img: $(this)[0],
+      src: $(this).attr('img-src')
+    };
+  });
+  loadNextImge(0, imageReg);
 }
 
 setLeftWallPositions();
 setRightWallPositions();
 setBasePositions();
-walk2d(-5000,0);
+walk2d(-5000, 0);
 
 
 
 
 
-$(document).ready(function(){		
+$(document).ready(function() {
 
-	window.setTimeout(function(){closeGates()},3000);	
-	loadLeftWallImages();
-	loadRightWallImages();
-	loadBaseImages();
-	loadCubeImages();
-	window.setTimeout(function(){
-		loop(function(loopId){
-		animateBases(loopId);
-		//rotateCubeLeft();
-		},10000);
-	},10000);
-		
+  window.setTimeout(function() {
+    closeGates();
+  }, 6000);
+  loadLeftWallImages();
+  loadRightWallImages();
+  loadBaseImages();
+  loadCubeImages();
+  window.setTimeout(function() {
+    loop(function(loopId) {
+      animateBases(loopId);
+      //rotateCubeLeft();
+    }, 10000);
+  }, 10000);
+
 });
+
+
+
+function setControl(fn, val) {
+  fn.call(null, val);
+
+  if (beta !== 0) {
+    $('.controls #up, .controls #down').attr('disabled', 'disabled');
+    $('.controls #left, .controls #right').removeAttr('disabled');
+
+  } else {
+    $('.controls #up, .controls #down').removeAttr('disabled');
+    $('.controls #left, .controls #right').attr('disabled', 'disabled');
+  }
+
+  $('.controls #turnLeft, .controls #turnRight').removeAttr('disabled');
+  if (beta == 90) {
+    $('.controls #turnLeft').attr('disabled', 'disabled');
+  } else if (beta == -90) {
+    $('.controls #turnRight').attr('disabled', 'disabled');
+  }
+
+}
