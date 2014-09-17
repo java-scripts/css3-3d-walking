@@ -5,10 +5,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <title>Java-scripts.github.io by java-scripts</title>
-  
- 
-
-     
   <link rel="stylesheet" href="css/custom.css">
   <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -17,229 +13,309 @@
     <link rel="stylesheet" href="stylesheets/ie.css">
     <![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  
+
   <script>
-  if(!(/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor))){
-		alert('This is a chrome experiment. Please use chromium browser.  Closing the window....');
-		window.close();
-		//fire fox can not be closed. so 
-		location.href="sorry"
-	}
+    if (!(/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor))) {
+      alert('This is a chrome experiment. Please use chromium browser.  Closing the window....');
+      window.close();
+      //fire fox can not be closed. so 
+      location.href = "sorry"
+    }
   </script>
 
 </head>
 
 <body>
-
+  <div id="header">
+    <table>
+      <tr>
+        <td style="width:40%"><a href="https://github.com/java-scripts/">Home</a> 
+        </td>
+        <td style="width:35%"><b>3D Walking with css3</b>
+        </td>
+        <td style="width:15%"><a href="https://github.com/java-scripts/css3-3d-walking/tree/gh-pages">View Source On GitHub</a>
+        </td>
+        <td style="width:9%"><a href="mailto:saratsivam@gmail.com?Subject=Feedback: 3D Walking with css3" target="_top">--saratsivam</a>
+        </td>
+      </tr>
+    </table>
+  </div>
 
   <section class="container">
-    <div id="box">   
-		<div class="front-wall">	
-			<div class="face cubecontainer one" id="test">
-				<div class="cube">	
-					<div class="face" id="front"> 						
-						<div class="content">	
-						<img src="" img-src="http://wallpaperscraft.com/image/room_lamp_door_three_schedule_77111_800x600.jpg?orig=3">
-						<a href="#" class="arrow_prev" onclick="rotateCubeRight(); "></a>
-						<a href="#" class="arrow_next" onclick="rotateCubeLeft(); "></a>									
-						</div>
-					
-					</div>
-					<div class="face" id="back">
-							<div class="content">	
-						<img src="" img-src="http://wallpaperscraft.com/image/room_lamp_door_three_schedule_77111_800x600.jpg?orig=3">
-							<!--<iframe src="faces/front/front.html" style="margin-bottom: -50px;margin-right: 50px;height: 100%;"></iframe>-->
-						<a href="#" class="arrow_prev" onclick="rotateCubeRight(); "></a>
-						<a href="#" class="arrow_next" onclick="rotateCubeLeft(); "></a>									
-						</div>	
-					</div>
-					<div class="face" id="left">
-							<div class="content">	
-						<img src="" img-src="http://wallpaperscraft.com/image/room_lamp_door_three_schedule_77111_800x600.jpg?orig=3">
-						<a href="#" class="arrow_prev" onclick="rotateCubeRight(); "></a>
-						<a href="#" class="arrow_next" onclick="rotateCubeLeft(); "></a>									
-						</div>
-					</div>
-					<div class="face" id="right">
-							<div class="content">	
-						<img src="" img-src="http://wallpaperscraft.com/image/room_lamp_door_three_schedule_77111_800x600.jpg?orig=3">
-						<a href="#" class="arrow_prev" onclick="rotateCubeRight(); "></a>
-						<a href="#" class="arrow_next" onclick="rotateCubeLeft(); "></a>									
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
+    <div id="box">
+    
+    <!-- ============================================ Front Wall =============================================-->
+      <div class="front-wall">
+        <div class="face cubecontainer one" id="test">
+          <div class="cube">
+            <div class="face" id="front">
+              <div class="content">
+                <img src="" img-src="http://wallpaperscraft.com/image/room_lamp_door_three_schedule_77111_800x600.jpg?orig=3">
+                <a href="#" class="arrow_prev" onclick="rotateCubeRight(); "></a>
+                <a href="#" class="arrow_next" onclick="rotateCubeLeft(); "></a>
+              </div>
+            </div>
+            <div class="face" id="back">
+              <div class="content">
+                <img src="" img-src="http://wallpaperscraft.com/image/room_lamp_door_three_schedule_77111_800x600.jpg?orig=3">
+                <!--<iframe src="faces/front/front.html" style="margin-bottom: -50px;margin-right: 50px;height: 100%;"></iframe>-->
+                <a href="#" class="arrow_prev" onclick="rotateCubeRight(); "></a>
+                <a href="#" class="arrow_next" onclick="rotateCubeLeft(); "></a>
+              </div>
+            </div>
+            <div class="face" id="left">
+              <div class="content">
+                <img src="" img-src="http://wallpaperscraft.com/image/room_lamp_door_three_schedule_77111_800x600.jpg?orig=3">
+                <a href="#" class="arrow_prev" onclick="rotateCubeRight(); "></a>
+                <a href="#" class="arrow_next" onclick="rotateCubeLeft(); "></a>
+              </div>
+            </div>
+            <div class="face" id="right">
+              <div class="content">
+                <img src="" img-src="http://wallpaperscraft.com/image/room_lamp_door_three_schedule_77111_800x600.jpg?orig=3">
+                <a href="#" class="arrow_prev" onclick="rotateCubeRight(); "></a>
+                <a href="#" class="arrow_next" onclick="rotateCubeLeft(); "></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-	
+
+      <!-- ============================================ Base  =============================================-->
       <div class="base">
         <div class="face  one odd">
-            <div class="content ">			
-			
-		  </div>
+          <div class="content ">
+          </div>
         </div>
         <div class="face  two even">
-           <div class="content ">
-			
-		  </div>
+          <div class="content ">
+          </div>
         </div>
         <div class="face  three odd">
-           <div class="content ">
-			
-		  </div>
+          <div class="content ">
+          </div>
         </div>
         <div class="face  four even">
-           <div class="content ">
-			
-		  </div>
+          <div class="content ">
+          </div>
         </div>
         <div class="face  five odd">
-            <div class="content ">
-			
-		  </div>
+          <div class="content ">
+          </div>
         </div>
         <div class="face  six even">
-           <div class="content ">
-			
-		  </div>
+          <div class="content ">
+          </div>
         </div>
         <div class="face  seven odd">
-            <div class="content ">
-			
-		  </div>
+          <div class="content ">
+          </div>
         </div>
         <div class="face  eight even">
-            <div class="content ">
-			
-		  </div>
+          <div class="content ">
+          </div>
         </div>
         <div class="face  nine odd">
-            <div class="content ">
-			
-		  </div>
+          <div class="content ">
+          </div>
         </div>
         <div class="face  ten even">
-            <div class="content ">			
-		  </div>
+          <div class="content ">
+          </div>
         </div>
       </div>
-
-     <div class="left-wall">
+      <!-- ============================================ Left Wall =============================================-->
+      <div class="left-wall">
         <div class="face one">
-           <div class="content">
-			<img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
+          </div>
         </div>
         <div class="face two">
-            <div class="content">
-			<img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
+          </div>
         </div>
         <div class="face three">
-            <div class="content">
-			<img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
+          </div>
         </div>
         <div class="face four">
-              <div class="content">
-			<img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
+          </div>
         </div>
         <div class="face five">
-            <div class="content">
-			<img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
+          </div>
         </div>
         <div class="face six">
-            <div class="content">
-			<img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://wallpaperscraft.com/image/cherry_berry_3d_74532_800x600.jpg?orig=3">
+          </div>
         </div>
-
       </div>
 
+      <!-- ============================================ Right Wall =============================================-->
       <div class="right-wall">
         <div class="face one">
-           <div class="content">
-			<img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
+          </div>
         </div>
         <div class="face two">
-            <div class="content">
-			<img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
+          </div>
         </div>
         <div class="face three">
-            <div class="content">
-			<img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
+          </div>
         </div>
         <div class="face four">
-            <div class="content">
-			<img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
+          </div>
         </div>
         <div class="face five">
-         <div class="content">
-			<img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
+          </div>
         </div>
         <div class="face six">
-            <div class="content">
-			<img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
-		  </div>
+          <div class="content">
+            <img src="" img-src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/3D-Wallpaper-8.jpg">
+          </div>
         </div>
-
       </div>
-      
+
+
+      <!-- ============================================ Login Wall =============================================-->
       <div class="login">
-		<div class="door" id="left">				
-			<div class="site-wrapper">  
-				
-				<table style="margin-right:150px">					
-					<tr rowspan="2"><td colspan="2"><h1>Login</h1>				</td></tr>
-					<tr><td>User Id</td><td>  <input type="text" placeholder = "User Id"></td></tr>
-					<tr><td>Password</td><td> <input type="password" placeholder = "password"></td></tr>
-					<tr><td colspan="2"><input type="button" value="Login" onclick="openGates();" ></td></tr>			
-					<tr><td colspan="2"><a href="#" style="margin-right: -300px;color:#C8B3F5;"><h1>Register</h1></a>	</td></tr>		
-				</table>				
-				
-     			 </div>
-     			 
-    		</div>    		
-		<div class="door" id="right">
-			<div class="site-wrapper">  
-				<table style="margin-left:150px">					
-					<tr rowspan="2"><td colspan="2"><h1>Guest Login</h1>				</td></tr>
-					
-					<tr><td colspan="2"><input type="button" value="Login" onclick="openGates();"></td></tr>			
-					
-				</table>		
-				<table style="margin-left:150px;text-align: left;padding-left:20px">					
-					<tr rowspan="2"><td colspan="2"><h1>Controls</h1>				</td></tr>
-					<tr><td>Move Forward</td><td> SHFT + Arrow key UP </td></tr>
-					<tr><td>Move Backward</td><td> SHFT + Arrow key DOWN </td></tr>
-					<tr><td>Turn Left</td><td> CTRL + Arrow key LEFT </td></tr>
-					<tr><td>Turn Right</td><td> CTRL + Arrow key RIGHT </td></tr>					
-					<tr><td>Walk Left</td><td> SHFT + Arrow key LEFT </td></tr>
-					<tr><td>Walk Right</td><td> SHFT + Arrow key RIGHT </td></tr>
-				</table>		
-									
-     			 </div>
-						
-		</div>				
-	</div>
-      
-      
+        <div class="door" id="left">
+          <div class="site-wrapper">
+            <table style="margin-right:150px">
+              <tr rowspan="2">
+                <td colspan="2">
+                  <h1>Login</h1>	
+                </td>
+              </tr>
+              <tr>
+                <td>User Id</td>
+                <td>
+                  <input type="text" placeholder="User Id">
+                </td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td>
+                  <input type="password" placeholder="password">
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="button" value="Login" onclick="openGates();">
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2"><a href="#" style="margin-right: -300px;color:#C8B3F5;"><h1>Register</h1></a>	
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="door" id="right">
+          <div class="site-wrapper">
+            <table style="margin-left:150px">
+              <tr rowspan="2">
+                <td colspan="2">
+                  <h1>Guest Login</h1>	
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="2">
+                  <input type="button" value="Login" onclick="openGates();">
+                </td>
+              </tr>
+
+            </table>
+            <table style="margin-left:150px;text-align: left;padding-left:20px">
+              <tr rowspan="2">
+                <td colspan="2">
+                  <h1>Controls</h1>	
+                </td>
+              </tr>
+              <tr>
+                <td>Move Forward</td>
+                <td>SHFT + Arrow key UP</td>
+              </tr>
+              <tr>
+                <td>Move Backward</td>
+                <td>SHFT + Arrow key DOWN</td>
+              </tr>
+              <tr>
+                <td>Turn Left</td>
+                <td>CTRL + Arrow key LEFT</td>
+              </tr>
+              <tr>
+                <td>Turn Right</td>
+                <td>CTRL + Arrow key RIGHT</td>
+              </tr>
+              <tr>
+                <td>Walk Left</td>
+                <td>SHFT + Arrow key LEFT</td>
+              </tr>
+              <tr>
+                <td>Walk Right</td>
+                <td>SHFT + Arrow key RIGHT</td>
+              </tr>
+            </table>
+
+          </div>
+
+        </div>
+      </div>
       
       
     </div>
-
   </section>
 
 
-
+  <div class="controls">
+    <table>
+      <tr>
+        <td colspan="3"></td>
+        <td>
+          <input type="button" value="&#8679;" onclick="setControl(up)" id="up">
+        </td>
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="<<" onclick="setControl(left)" id="turnLeft">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" value="&#8678;" onclick="setControl(sideWalk,-400)" id="left" disabled="disabled">
+        </td>
+        <td>
+          <input type="button" value="&#8681;" onclick="setControl(down)" id="down">
+        </td>
+        <td>
+          <input type="button" value="&#8680;" onclick="setControl(sideWalk,400)" id="right" disabled="disabled">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" value=">>" onclick="setControl(right)" id="turnRight">
+        </td>
+      </tr>
+    </table>
+  </div>
 
 
   <script src="js/jquery.min.js"></script>
